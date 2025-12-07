@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuxz Store</title>
+  <link rel="stylesheet" href="src/output.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <!-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
+</head>
+<body class="bg-gray-50 overflow-x-hidden">
+    <!-- Navigation -->
+     <dialog id="my_modal_4" class="modal">
+        <div class="modal-box w-11/12 max-w-2xl">
+            <h3 class="text-lg font-bold">Pembayaran</h3>
+            <div class="flex justify-center">
+                <img class="w-1/2 h-1/2 lg:w-1/4 lg:h-1/4" src="dist/img/QRIS.jpg" alt="">
+            </div>
+            <div class="py-4">
+                <h3 class="py-4 text-lg font-bold">Cara membeli</h3>
+                <ul class="list-decimal ml-2">
+                    <li>Transfer sesuai harga produk lewat qris di atas.</li>
+                    <li>Setelah melakukan transfer kirim bukti transfer di nomor WhatsApp Ini -> 085807107865</li>
+                </ul>
+            </div>
+            <div class="flex items-start gap-2">
+                <a class="bg-green-600 text-white px-3 py-2 focus:rounded-lg rounded-lg" href="dist/img/QRIS.jpg" download="">
+                    <button>Download Qris</button>
+                </a>
+                <a class="bg-purple-500 text-white px-3 py-2 focus:rounded-lg rounded-lg" href="https://wa.me/6285807107865?text=Aku%20ingin%20membeli%20apk%20prem%20" target="_blank">
+                    <button>Kirim Bukti Transfer</button>
+                </a>
+            </div>
+            <div class="modal-action">
+            <form method="dialog">
+                <!-- if there is a button, it will close the modal -->
+                <button class="btn shadow-md px-3 py-2 rounded-lg">Close</button>
+            </form>
+            </div>
+        </div>
+      </dialog>
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-lg z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <i class="fas fa-shopping-bag text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                        Nuxzstore
+                    </span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Home</a>
+                    <a href="index.html/#products" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Produk</a>
+                    <a href="index.html/#features" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Fitur</a>
+                    <a href="index.html/#contact" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Kontak</a>
+                    <button class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                        Login
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-gray-700 text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white border-t" id="mobile-menu">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-primary transition-colors">Home</a>
+                <a href="#products" class="block py-2 text-gray-700 hover:text-primary transition-colors">Produk</a>
+                <a href="#features" class="block py-2 text-gray-700 hover:text-primary transition-colors">Fitur</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-primary transition-colors">Kontak</a>
+                <button class="w-full mt-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-lg">
+                    Login
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="products" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">
+                    <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                        Produk Unggulan
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Koleksi produk terbaik dengan kualitas premium dan harga terjangkau
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product Capcut -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+                            <img class="rounded-lg" src="dist/img/capcut.png" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            Hot
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                            
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">CAPCUT PREMIUM</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro selama 1 bulan, dengan harga yang terjangkau</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 25k</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">Rp 60k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- Product Canva -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-purple-100 to-blue-100 flex items-center justify-center">
+                            <img class="rounded-lg" src="dist/img/canva.jpeg" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            New
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">CANVA PREMIUM</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses ke fitur pro dengan harga yang terjangkau dengan durasi 1 Bulan</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 10k</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">Rp 30k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Netflix  -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-red-100 to-black flex items-center justify-center">
+                            <img class="w-2/3 rounded-lg" src="dist/img/netflix.png" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            Hot
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">NETFLIX</h3>
+                        <p class="text-gray-600 text-sm mb-4">netflix dengan harga yang terjangkau untuk menonton film kesukaan kamu</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 25k</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">Rp 45k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Yt -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/yt.png" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">YOUTUBE PREMIUM</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 20k</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">Rp 55k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Aligt motion -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/am.jpeg" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">ALIGHT MOTION</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan ekspor 5 mb dan menghapus watermark</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 10k</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Vidio -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/vidio.png" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">VIDIO</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 20k</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">Rp 40k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Bstation -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/bs.jpeg" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">BSTATION</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 20k</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">Rp 40k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Spotify -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/spotify.png" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">SPOTIFY PREMIUM</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 20k</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">Rp 40k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Apple music -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/Apple Music_Symbol_2.webp" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">APPLE MUSIC</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 15k</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">Rp 40k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Telegram -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/telegram.png" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">TELEGRAM</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 70k</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product LightRoom -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/lightroom.svg" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">LIGHTROOM</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 35k</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Gemini -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/gemini.png" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">GEMINI AI</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 15k</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product lOKLOK -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/Loklok.jpeg" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">LOKLOK</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 30k</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Crunchyroll -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/crunch.png" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Crunchyroll</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 15k</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Product CHATPGT -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/ChatGPT-Logo.png" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">CHATGPT</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 40K</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Product DISNEY -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/Disney_logo.png" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">DISNEY</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 35k</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">Rp 300K</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Product SCRIBD -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/scribd-seeklogo.svg" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">SRIBD</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 20K</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Product PICSART -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/picsart.png" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">PICSART</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 15K</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Product PRIMEVIDEO -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/prime.png" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">PRIME VIDEO</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 10k</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Product vision+ -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/Logo_Vision+_App.png" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">VISION+</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 20k</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Product IQIYI -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <div class="h-48 bg-white flex items-center justify-center">
+                            <img class="rounded-lg w-2/3" src="dist/img/iqiyi.svg" alt="">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -25%
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <!-- You can open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 text-white px-6 py-2 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300" onclick="my_modal_4.showModal()">Beli</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">IQIYI</h3>
+                        <p class="text-gray-600 text-sm mb-4">Akses fitur pro dengan penghapusan ads, download kualitas lebih tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">Rp 20K</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+            
+
+            <div class="text-center mt-12">
+                <a href="produk.html" class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                    Lihat Semua Produk
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+     <footer id="contact" class="bg-gray-900 text-white py-16 mt-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                            <i class="fas fa-shopping-bag text-white text-lg"></i>
+                        </div>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                            Nuxzstore
+                        </span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Platform e-commerce terpercaya yang menghadirkan produk berkualitas dengan layanan terbaik untuk kepuasan pelanggan.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-white">Quick Links</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-gray-300 hover:text-primary transition-colors duration-300">Tentang Kami</a>
+                        <a href="#" class="block text-gray-300 hover:text-primary transition-colors duration-300">Produk</a>
+                        <a href="#" class="block text-gray-300 hover:text-primary transition-colors duration-300">Blog</a>
+                        <a href="#" class="block text-gray-300 hover:text-primary transition-colors duration-300">Karir</a>
+                        <a href="#" class="block text-gray-300 hover:text-primary transition-colors duration-300">Kontak</a>
+                    </div>
+                </div>
+
+                <!-- Customer Service -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-white">Layanan</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-gray-300 hover:text-primary transition-colors duration-300">Bantuan</a>
+                        <a href="#" class="block text-gray-300 hover:text-primary transition-colors duration-300">Pengiriman</a>
+                        <a href="#" class="block text-gray-300 hover:text-primary transition-colors duration-300">Pengembalian</a>
+                        <a href="#" class="block text-gray-300 hover:text-primary transition-colors duration-300">Garansi</a>
+                        <a href="#" class="block text-gray-300 hover:text-primary transition-colors duration-300">FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-white">Hubungi Kami</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-primary"></i>
+                            <p class="text-gray-300">+6285807107865</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <p class="text-gray-300">atbrxnk@gmail.com/p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-primary"></i>
+                            <p class="text-gray-300">24/7 Customer Support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="text-gray-400 text-sm">
+                        © 2024 ShopMart. All rights reserved. Made with ❤️ in Indonesia
+                    </div>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-primary to-secondary text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="dist/js/main.js"></script>
+  </body>
+</html>
