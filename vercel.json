@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/produk",
+      "destination": "/produk.html"
+    }
+
+  ]
+}
